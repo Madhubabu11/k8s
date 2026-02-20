@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt update
 
 ARCH=$(uname -m)
 
@@ -25,3 +26,8 @@ sudo mv kubectl /usr/local/bin/
 # Verify
 kind --version
 kubectl version --client
+
+sudo apt update
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo usermod -aG docker ubuntu && newgrp docker
